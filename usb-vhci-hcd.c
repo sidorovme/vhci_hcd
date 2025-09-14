@@ -981,8 +981,6 @@ static void vhci_hcd_remove(struct platform_device *pdev)
 		vhci_dbg("call ifc->destroy\n");
 		vdev->ifc->destroy(vhcidev_to_ifc(vdev));
 	}
-
-	return 0;
 }
 
 static int vhci_hcd_suspend(struct platform_device *pdev, pm_message_t state)
@@ -1151,6 +1149,7 @@ int usb_vhci_hcd_unregister(struct usb_vhci_device *vdev)
 
 	module_put(ifc_owner);
 	module_put(THIS_MODULE);
+	return 0;
 }
 EXPORT_SYMBOL_GPL(usb_vhci_hcd_unregister);
 
