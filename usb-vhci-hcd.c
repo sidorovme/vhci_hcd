@@ -931,7 +931,7 @@ static int vhci_hcd_probe(struct platform_device *pdev)
 	return retval;
 }
 
-static int vhci_hcd_remove(struct platform_device *pdev)
+static void vhci_hcd_remove(struct platform_device *pdev)
 {
 	unsigned long flags;
 	struct usb_hcd *hcd;
@@ -1151,7 +1151,6 @@ int usb_vhci_hcd_unregister(struct usb_vhci_device *vdev)
 
 	module_put(ifc_owner);
 	module_put(THIS_MODULE);
-	return 0;
 }
 EXPORT_SYMBOL_GPL(usb_vhci_hcd_unregister);
 

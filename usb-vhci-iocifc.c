@@ -1070,7 +1070,6 @@ static void vhci_iocifc_device_release(struct device *dev)
 static int vhci_iocifc_major;
 
 static struct class vhci_iocifc_class = {
-	.owner = THIS_MODULE,
 	.name = driver_name
 };
 
